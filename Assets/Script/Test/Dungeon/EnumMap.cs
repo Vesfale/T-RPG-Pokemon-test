@@ -20,7 +20,8 @@ public enum TypeTile
     None = -1,
     Ground = 0,
     Wall = 1,
-    Water = 2
+    Water = 2,
+    Exit = 3
 }
 
 public enum SousTypeTile
@@ -41,6 +42,7 @@ public class EnumMap
     public static Dictionary<TypeTile, string> TypeSprite = new Dictionary<TypeTile, string>()
     {
         {TypeTile.Ground, "Ground"},
+        {TypeTile.Exit, "Ground"},
         {TypeTile.Wall, "Wall"},
         {TypeTile.Water, "Water"}
     };
@@ -50,14 +52,17 @@ public class EnumMap
     {
         //1
         {"000011011", "0"},
+        // {"001011011", "0"}, //Not Exist Manual
+        // {"001011111", "0"}, //Not Exist Manual
+        // {"000011111", "0"}, //Not Exist Manual
         {"000111111", "1"},
-        {"100111111", "1"}, //Not Exist Manual
-        {"001111111", "1"}, //Not Exist Manual
+        // {"100111111", "1"}, //Not Exist Manual
+        // {"001111111", "1"}, //Not Exist Manual
         {"000110110", "2"},
 
         {"011011011", "3"},
-        {"111011011", "3"}, //Not Exist Manual
-        {"011011111", "3"}, //Not Exist Manual
+        // {"111011011", "3"}, //Not Exist Manual
+        // {"011011111", "3"}, //Not Exist Manual
         {"111111111", "4"},
         {"110110110", "5"},
         {"111110110", "5"}, //Not Exist Manual
@@ -65,8 +70,8 @@ public class EnumMap
 
         {"011011000", "6"},
         {"111111000", "7"},
-        {"111111100", "7"}, //Not Exist Manual
-        {"111111001", "7"}, //Not Exist Manual
+        // {"111111100", "7"}, //Not Exist Manual
+        // {"111111001", "7"}, //Not Exist Manual
         {"110110000", "8"},
 
         //2

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -30,6 +31,7 @@ public class MapHandler
 	public int MapWidth			{ get; set; }
 	public int MapHeight		{ get; set; }
 	public int PercentAreWalls	{ get; set; }
+	public List<CardinalPoint> ListExit	{ get; set; }
 
 	public void CreateWay(CardinalPoint Point, CardinalPoint Dir, int Size)
 	{
@@ -44,7 +46,6 @@ public class MapHandler
 	public Vector2Int NearestPoint(CardinalPoint Point, Vector2Int PosStart) 
 	{
 		Vector2Int Pos = new Vector2Int();
-		
 
 		return Pos;
 	}
@@ -81,7 +82,7 @@ public class MapHandler
 				break;
 			default: 
 				Pos = new Vector2Int(0, 0);
-			break;
+				break;
 		}
 
 		return Pos;
@@ -106,7 +107,7 @@ public class MapHandler
 		for(int column=0, row=0; row <= MapHeight-1; row++)
 		{
 			for(column = 0; column <= MapWidth-1; column++){
-				if (Map[column,row].Type == TypeTile.Ground && Map[column,row].ID_cavern == -1)
+				if ((Map[column,row].Type == TypeTile.Ground || Map[column,row].Type == TypeTile.Exit) && Map[column,row].ID_cavern == -1)
 				{
 					NbCaverns++;
 					Caverns.Add(NbCaverns, new List<Vector2Int>());
@@ -125,7 +126,7 @@ public class MapHandler
 	public int TileCaverns(int x,int y, int ID, int Size)
 	{
 
-		if (Map[x,y].Type != TypeTile.Ground || Map[x,y].ID_cavern != -1)
+		if ((Map[x,y].Type != TypeTile.Ground && Map[x,y].Type != TypeTile.Exit) || Map[x,y].ID_cavern != -1)
 			return Size;
 		Map[x,y].ID_cavern = ID;
 		Size++;
@@ -239,10 +240,10 @@ public class MapHandler
 			else if(numWalls >= WallToFloor)
 				return TypeTile.Wall;
 		}
-		else
+		else if (Map[x,y].Type == TypeTile.Ground)
 			if(numWalls > FloorToWall)
 				return TypeTile.Wall;
-		return TypeTile.Ground;
+		return Map[x,y].Type;
 	}
 	
 	public List<Vector2Int> GetAdjacentWalls(int x,int y,int scopeX,int scopeY)
@@ -277,7 +278,7 @@ public class MapHandler
 			return true;
 		if(Map[x, y].Type == TypeTile.Wall)
 			return true;
-		if(Map[x, y].Type == TypeTile.Ground)
+		if(Map[x, y].Type == TypeTile.Ground || Map[x, y].Type == TypeTile.Exit)
 			return false;
 
 		return false;
@@ -322,14 +323,68 @@ public class MapHandler
 				if (setTile == true) {
 					Map[column,row] = InitTileDef(ID);
 					// If coordinants lie on the the edge of the map (creates a border)
-					if(column == 0 || row == 0)
-						Map[column,row].Type = TypeTile.Wall;
-					else if (column == MapWidth-1 || row == MapHeight-1)
+					if(column == 0 || row == 0 || column == MapWidth-1 || row == MapHeight-1)
 						Map[column,row].Type = TypeTile.Wall;
 					else // Else, fill with a wall a random percent of the time
 						Map[column,row].Type = RandomPercent(PercentAreWalls);
 				}
 			}
+		}
+
+		//Pos Exit
+		if (ID == -1)
+			SearchExit();
+	}
+
+	private void SearchExit()
+	{
+		int ColumnExit;
+		int RowExit;
+		int Size = 3;
+
+		foreach(CardinalPoint Exit in this.ListExit){
+			Debug.Log("Je Passe");
+			switch (Exit)
+			{
+				case CardinalPoint.North:
+					RowExit = MapHeight-1;
+					ColumnExit = rand.Next(1,MapWidth-1-Size);
+					SetExit(ColumnExit, RowExit, Size, 0);
+					break;
+				case CardinalPoint.East:
+					RowExit = rand.Next(1,MapHeight-1-Size);
+					ColumnExit = MapWidth-2;
+					SetExit(ColumnExit, RowExit, 0, Size);
+					break;
+				case CardinalPoint.South:
+					RowExit = 0;
+					ColumnExit = rand.Next(1,MapWidth-1-Size);
+					SetExit(ColumnExit, RowExit, Size, 0);
+					break;
+				case CardinalPoint.West:
+					RowExit = rand.Next(1,MapHeight-1-Size);
+					ColumnExit = 0;
+					SetExit(ColumnExit, RowExit, 0, Size);
+					break;
+				default: 
+					break;
+			}
+		}
+	}
+
+	private void SetExit(int ColumnExit, int RowExit, int SizeColumn, int SizeRow)
+	{
+		Debug.Log("ColumnExit = "+ColumnExit+ " <=> RowExit = "+RowExit);
+		for(int SizeExit = 0; SizeExit < SizeColumn; SizeExit++)
+		{
+			if (ColumnExit+SizeExit < MapWidth-1)
+				Map[ColumnExit+SizeExit,RowExit].Type = TypeTile.Exit;
+		}
+
+		for(int SizeExit = 0; SizeExit < SizeRow; SizeExit++)
+		{
+			if (RowExit+SizeExit < MapHeight-1)
+				Map[ColumnExit,RowExit+SizeExit].Type = TypeTile.Exit;
 		}
 	}
 
@@ -352,12 +407,16 @@ public class MapHandler
 		return Tile;
 	}
 	
-	public MapHandler(int mapWidth, int mapHeight, int percentWalls=40)
+	public MapHandler(int mapWidth, int mapHeight, int percentWalls=40, List<CardinalPoint> Exit = default)
 	{
 		this.MapWidth = mapWidth;
 		this.MapHeight = mapHeight;
 		this.PercentAreWalls = percentWalls;
 		this.ID_MainCavern = -1;
+		if (Exit == null) 
+			this.ListExit = new List<CardinalPoint>();
+		else
+			this.ListExit = new List<CardinalPoint>(Exit);
 		this.Map = new TileDef[this.MapWidth,this.MapHeight];
 		this.Caverns = new Dictionary<int, List<Vector2Int>>();
 	}

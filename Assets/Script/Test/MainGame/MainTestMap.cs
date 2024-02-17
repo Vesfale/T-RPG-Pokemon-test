@@ -26,8 +26,14 @@ public class MainTestMap : MonoBehaviour
 
     public void NewFreshMap()
     {
+        List<CardinalPoint> ListExit = new List<CardinalPoint>
+        {
+            CardinalPoint.North,
+            CardinalPoint.West
+        };
+
         Dungeon.ClearMap();
-        Dungeon.Genere(50, 50, 40);
+        Dungeon.Genere(50, 50, 40, ListExit);
     }
 
     public void DeleteCaverns()

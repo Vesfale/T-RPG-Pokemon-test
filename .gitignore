@@ -1,0 +1,206 @@
+Assets/Resources/AttackSprite/*
+Assets/Resources/MobSprite/*
+Assets/Resources/MobSpriteMenu/*
+Library/*
+Logs/*
+obj/Debug/.NETFramework,Version=v4.7.1.AssemblyAttributes.cs
+obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache
+obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+Packages/manifest.json
+Packages/packages-lock.json
+ProjectSettings/AudioManager.asset
+ProjectSettings/boot.config
+ProjectSettings/BurstAotSettings_StandaloneWindows.json
+ProjectSettings/ClusterInputManager.asset
+ProjectSettings/CommonBurstAotSettings.json
+ProjectSettings/DynamicsManager.asset
+ProjectSettings/EditorBuildSettings.asset
+ProjectSettings/EditorSettings.asset
+ProjectSettings/GraphicsSettings.asset
+ProjectSettings/InputManager.asset
+ProjectSettings/MemorySettings.asset
+ProjectSettings/NavMeshAreas.asset
+ProjectSettings/NetworkManager.asset
+ProjectSettings/PackageManagerSettings.asset
+ProjectSettings/Physics2DSettings.asset
+ProjectSettings/PresetManager.asset
+ProjectSettings/ProjectSettings.asset
+ProjectSettings/ProjectVersion.txt
+ProjectSettings/QualitySettings.asset
+ProjectSettings/SceneTemplateSettings.json
+ProjectSettings/TagManager.asset
+ProjectSettings/TimelineSettings.asset
+ProjectSettings/TimeManager.asset
+ProjectSettings/UnityConnectSettings.asset
+ProjectSettings/VersionControlSettings.asset
+ProjectSettings/VFXManager.asset
+ProjectSettings/VisualScriptingSettings.asset
+ProjectSettings/XRSettings.asset
+Temp/FSTimeGet-44c2db73f2e53c84184c5e3811ba881c
+Temp/PropertyDatabase_1265138678
+Temp/PropertyDatabase_2066312223
+Temp/UnityLockfile
+Temp/workerlic
+Temp/__Backupscenes/0.backup
+test/Pokemon DM Test.exe
+test/UnityCrashHandler64.exe
+test/UnityPlayer.dll
+test/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll
+test/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll
+test/MonoBleedingEdge/etc/mono/browscap.ini
+test/MonoBleedingEdge/etc/mono/config
+test/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx
+test/MonoBleedingEdge/etc/mono/2.0/machine.config
+test/MonoBleedingEdge/etc/mono/2.0/settings.map
+test/MonoBleedingEdge/etc/mono/2.0/web.config
+test/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser
+test/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx
+test/MonoBleedingEdge/etc/mono/4.0/machine.config
+test/MonoBleedingEdge/etc/mono/4.0/settings.map
+test/MonoBleedingEdge/etc/mono/4.0/web.config
+test/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser
+test/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx
+test/MonoBleedingEdge/etc/mono/4.5/machine.config
+test/MonoBleedingEdge/etc/mono/4.5/settings.map
+test/MonoBleedingEdge/etc/mono/4.5/web.config
+test/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser
+test/MonoBleedingEdge/etc/mono/mconfig/config.xml
+test/Pokemon DM Test_BurstDebugInformation_DoNotShip/Data/Plugins/x86_64/lib_burst_generated.txt
+test/Pokemon DM Test_Data/app.info
+test/Pokemon DM Test_Data/boot.config
+test/Pokemon DM Test_Data/globalgamemanagers
+test/Pokemon DM Test_Data/globalgamemanagers.assets
+test/Pokemon DM Test_Data/level0
+test/Pokemon DM Test_Data/resources.assets
+test/Pokemon DM Test_Data/resources.assets.resS
+test/Pokemon DM Test_Data/RuntimeInitializeOnLoads.json
+test/Pokemon DM Test_Data/ScriptingAssemblies.json
+test/Pokemon DM Test_Data/sharedassets0.assets
+test/Pokemon DM Test_Data/Managed/Assembly-CSharp.dll
+test/Pokemon DM Test_Data/Managed/Mono.Security.dll
+test/Pokemon DM Test_Data/Managed/mscorlib.dll
+test/Pokemon DM Test_Data/Managed/netstandard.dll
+test/Pokemon DM Test_Data/Managed/Newtonsoft.Json.dll
+test/Pokemon DM Test_Data/Managed/System.ComponentModel.Composition.dll
+test/Pokemon DM Test_Data/Managed/System.Configuration.dll
+test/Pokemon DM Test_Data/Managed/System.Core.dll
+test/Pokemon DM Test_Data/Managed/System.Data.DataSetExtensions.dll
+test/Pokemon DM Test_Data/Managed/System.Data.dll
+test/Pokemon DM Test_Data/Managed/System.dll
+test/Pokemon DM Test_Data/Managed/System.Drawing.dll
+test/Pokemon DM Test_Data/Managed/System.EnterpriseServices.dll
+test/Pokemon DM Test_Data/Managed/System.IO.Compression.dll
+test/Pokemon DM Test_Data/Managed/System.IO.Compression.FileSystem.dll
+test/Pokemon DM Test_Data/Managed/System.Net.Http.dll
+test/Pokemon DM Test_Data/Managed/System.Numerics.dll
+test/Pokemon DM Test_Data/Managed/System.Runtime.dll
+test/Pokemon DM Test_Data/Managed/System.Runtime.Serialization.dll
+test/Pokemon DM Test_Data/Managed/System.Security.dll
+test/Pokemon DM Test_Data/Managed/System.ServiceModel.Internals.dll
+test/Pokemon DM Test_Data/Managed/System.Transactions.dll
+test/Pokemon DM Test_Data/Managed/System.Xml.dll
+test/Pokemon DM Test_Data/Managed/System.Xml.Linq.dll
+test/Pokemon DM Test_Data/Managed/Unity.2D.Animation.Runtime.dll
+test/Pokemon DM Test_Data/Managed/Unity.2D.Common.Runtime.dll
+test/Pokemon DM Test_Data/Managed/Unity.2D.IK.Runtime.dll
+test/Pokemon DM Test_Data/Managed/Unity.2D.PixelPerfect.dll
+test/Pokemon DM Test_Data/Managed/Unity.2D.SpriteShape.Runtime.dll
+test/Pokemon DM Test_Data/Managed/Unity.2D.Tilemap.Extras.dll
+test/Pokemon DM Test_Data/Managed/Unity.Burst.Cecil.dll
+test/Pokemon DM Test_Data/Managed/Unity.Burst.Cecil.Mdb.dll
+test/Pokemon DM Test_Data/Managed/Unity.Burst.Cecil.Pdb.dll
+test/Pokemon DM Test_Data/Managed/Unity.Burst.Cecil.Rocks.dll
+test/Pokemon DM Test_Data/Managed/Unity.Burst.dll
+test/Pokemon DM Test_Data/Managed/Unity.Burst.Unsafe.dll
+test/Pokemon DM Test_Data/Managed/Unity.InternalAPIEngineBridge.001.dll
+test/Pokemon DM Test_Data/Managed/Unity.Mathematics.dll
+test/Pokemon DM Test_Data/Managed/Unity.Services.Core.Analytics.dll
+test/Pokemon DM Test_Data/Managed/Unity.Services.Core.Configuration.dll
+test/Pokemon DM Test_Data/Managed/Unity.Services.Core.Device.dll
+test/Pokemon DM Test_Data/Managed/Unity.Services.Core.dll
+test/Pokemon DM Test_Data/Managed/Unity.Services.Core.Environments.dll
+test/Pokemon DM Test_Data/Managed/Unity.Services.Core.Environments.Internal.dll
+test/Pokemon DM Test_Data/Managed/Unity.Services.Core.Internal.dll
+test/Pokemon DM Test_Data/Managed/Unity.Services.Core.Networking.dll
+test/Pokemon DM Test_Data/Managed/Unity.Services.Core.Registration.dll
+test/Pokemon DM Test_Data/Managed/Unity.Services.Core.Scheduler.dll
+test/Pokemon DM Test_Data/Managed/Unity.Services.Core.Telemetry.dll
+test/Pokemon DM Test_Data/Managed/Unity.Services.Core.Threading.dll
+test/Pokemon DM Test_Data/Managed/Unity.TextMeshPro.dll
+test/Pokemon DM Test_Data/Managed/Unity.Timeline.dll
+test/Pokemon DM Test_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll
+test/Pokemon DM Test_Data/Managed/Unity.VisualScripting.Core.dll
+test/Pokemon DM Test_Data/Managed/Unity.VisualScripting.Flow.dll
+test/Pokemon DM Test_Data/Managed/Unity.VisualScripting.State.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.AccessibilityModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.AIModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.AndroidJNIModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.AnimationModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.ARModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.AssetBundleModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.AudioModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.ClothModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.ClusterInputModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.ClusterRendererModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.CoreModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.CrashReportingModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.DirectorModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.DSPGraphModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.GameCenterModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.GIModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.GridModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.HotReloadModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.ImageConversionModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.IMGUIModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.InputLegacyModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.InputModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.JSONSerializeModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.LocalizationModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.NVIDIAModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.ParticleSystemModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.PerformanceReportingModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.Physics2DModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.PhysicsModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.ProfilerModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.ScreenCaptureModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.SharedInternalsModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.SpriteMaskModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.SpriteShapeModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.StreamingModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.SubstanceModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.SubsystemsModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.TerrainModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.TerrainPhysicsModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.TextRenderingModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.TilemapModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.TLSModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.UI.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.UIElementsModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.UIElementsNativeModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.UIModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.UmbraModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.UNETModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.UnityAnalyticsModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.UnityConnectModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.UnityCurlModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.UnityTestProtocolModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.UnityWebRequestModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.VehiclesModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.VFXModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.VideoModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.VirtualTexturingModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.VRModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.WindModule.dll
+test/Pokemon DM Test_Data/Managed/UnityEngine.XRModule.dll
+test/Pokemon DM Test_Data/Plugins/x86_64/lib_burst_generated.dll
+test/Pokemon DM Test_Data/Resources/unity default resources
+test/Pokemon DM Test_Data/Resources/unity_builtin_extra
+test/Pokemon DM Test_Data/StreamingAssets/UnityServicesProjectConfiguration.json

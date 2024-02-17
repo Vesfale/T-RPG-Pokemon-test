@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -45,11 +46,13 @@ public class DungeonMain : MonoBehaviour
         ListPokemon.Add(PokemonObject.Create(MousePos, ID_Pokemon));
         if(Player1 != null)
         {
+            Debug.Log("dfjkedshbkgflredbqsilfgh = "+Player1.InitPos);
             if (Player1.InitPos == false)
             {
-                ListPokemon.Remove(Player1);
-                Destroy(Player1.MovePoint.gameObject);
+                //Destroy(Player1.MovePoint);
+                Debug.Log("dfjkedshbkgflredbqsilfgh = "+Player1.gameObject.name);
                 Destroy(Player1.gameObject);
+                ListPokemon.Remove(Player1);
             }
             Player1.Playable(false);
         }

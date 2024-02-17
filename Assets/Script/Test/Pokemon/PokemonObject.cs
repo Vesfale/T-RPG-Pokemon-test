@@ -39,7 +39,9 @@ public class PokemonObject : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.position = Vector3.MoveTowards(transform.position, MovePoint.position, EnumPokemon.MoveSpeed * Time.deltaTime);
+        if(InitPos == true) {
+            transform.position = Vector3.MoveTowards(transform.position, MovePoint.position, EnumPokemon.MoveSpeed * Time.deltaTime);
+        }
         AnimSprite.Update();
         spriteRenderer.sprite = AnimSprite.GetCurrentSpriteAnim();
     }
@@ -68,7 +70,7 @@ public class PokemonObject : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, MovePoint.position) <= 0.05F)
         {
-            if (!Physics2D.OverlapCircle(MovePoint.position + Direction+ ((Vector3.up + Vector3.right) * 0.5F), 0.2F, WhatStopMovement))
+            if (!Physics2D.OverlapCircle(MovePoint.position + Direction + ((Vector3.up + Vector3.right) * 0.5F), 0.2F, WhatStopMovement))
                 MovePoint.position += Direction;
             if (EnumPokemon.Direction.ContainsKey(Direction))
             {
@@ -88,6 +90,7 @@ public class PokemonObject : MonoBehaviour
         PokemonObject CurrentPokemon;
         GameObject NewPokemon = Instantiate(EnumPokemon.Prefab, (Vector3)Spawn, Quaternion.identity) as GameObject;
         
+        NewPokemon.name = NewPokemon.GetInstanceID().ToString();
         CurrentPokemon = NewPokemon.GetComponent<PokemonObject>();
         CurrentPokemon.InitPokemon(NewPokemon, Spawn, ID);
 

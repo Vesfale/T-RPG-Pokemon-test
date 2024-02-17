@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine; 
 using UnityEngine.Tilemaps;
 
@@ -18,7 +19,8 @@ public class Map
     public Map()
     {
         this.SetTileMap();
-        this.SetMapSprite("Treeshroud Forest");
+        //this.SetMapSprite("Treeshroud Forest");
+        this.SetMapSprite("Station Pass");
     }
 
     public void SetTileMap()
@@ -50,13 +52,13 @@ public class Map
         this.DrawMap();
     }
 
-    public void Genere(int Width, int Height, int PercentWalls)
+    public void Genere(int Width, int Height, int PercentWalls, List<CardinalPoint> ListExit = default)
     {  
-        Dungeon = new MapHandler(Width, Height, PercentWalls);
+        Dungeon = new MapHandler(Width, Height, PercentWalls, ListExit);
         Dungeon.RandomFillMap();
         Dungeon.MakeCaverns(2);
         this.ConnectCaverns();
-        this.DeleteCaverns();
+        //this.DeleteCaverns();
         this.DrawMap();
     }
 
@@ -105,6 +107,7 @@ public class Map
     public void DrawMap()
     {
         string FormatSprite;
+        string FormatSpriteReal;
         string FormatSpriteLow;
         char SameTile;
         
@@ -142,25 +145,65 @@ public class Map
             FormatSprite += SameTile;
             FormatSpriteLow += '0';
 
-            if(EnumMap.SpriteNumber.ContainsKey(FormatSprite))
-                this.DrawTile(Tile.Key, Tile.Value, FormatSprite);
+            FormatSpriteReal = this.GetFormatSprite(FormatSprite);
+            if(EnumMap.SpriteNumber.ContainsKey(FormatSpriteReal))
+                this.DrawTile(Tile.Key, Tile.Value, FormatSpriteReal);
             else
                 this.DrawTile(Tile.Key, Tile.Value, FormatSpriteLow);
         }
     }
 
-    public void DrawTile(Vector3Int Position, TileDef Tile, string FormatSprite)
+    public void DrawTile(Vector3Int Position, TileDef Tile, string FormatSpriteReal)
     {
         string TypeSprite = EnumMap.TypeSprite[Tile.Type];
         Tile TileObject = ScriptableObject.CreateInstance<Tile>();
 
-        TileObject.color = Tile.Color;
-        TileObject.sprite = this.SpriteMap[this.TextureName+"_"+TypeSprite+"_"+EnumMap.SpriteNumber[FormatSprite]];
-        if (TypeSprite == EnumMap.TypeSprite[TypeTile.Ground])
+        if (Tile.Type == TypeTile.Exit)
+            TileObject.color = Color.red;
+        else
+            TileObject.color = Tile.Color;
+        TileObject.sprite = this.SpriteMap[this.TextureName+"_"+TypeSprite+"_"+EnumMap.SpriteNumber[FormatSpriteReal]];
+        if (TypeSprite == EnumMap.TypeSprite[TypeTile.Ground] || TypeSprite == EnumMap.TypeSprite[TypeTile.Exit])
             this.Ground.SetTile(Position, TileObject);
         else if (TypeSprite == EnumMap.TypeSprite[TypeTile.Water])
             this.Water.SetTile(Position, TileObject);
         else
             this.Wall.SetTile(Position, TileObject);
+    }
+
+    public string GetFormatSprite(string FormatSpriteReal)
+    {
+        string FormatSprite = FormatSpriteReal;
+        char[] EacheCase = FormatSpriteReal.ToCharArray();
+        bool Res = true;
+        int MaxSame = 0;
+        int Same = 0;
+        int Pos = 0;
+        
+        foreach (KeyValuePair<string, string> Format in EnumMap.SpriteNumber) {
+            Pos = 0;
+            Same = 0;
+            Res = true;
+            foreach(int c in Format.Key) {
+                if (c == '0'){
+                    Pos++;
+                    continue;
+                }
+                if (EacheCase[Pos] != c) {
+                    Res = false;
+                    break;
+                }
+                else
+                    Same++;
+                Pos++;
+            }
+
+            if (Res == true && MaxSame < Same) {
+                MaxSame = Same;
+                FormatSprite = Format.Key;
+            }
+        }
+
+        return FormatSprite;
     }
 }

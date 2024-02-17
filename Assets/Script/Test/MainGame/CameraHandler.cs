@@ -39,6 +39,7 @@ public class CameraHandler : MonoBehaviour
 
     public void HandleMovement()
     {
+
         if (CameraFollowPosition == transform.position)
         {
             float MoveAmount = 100f;
@@ -78,6 +79,9 @@ public class CameraHandler : MonoBehaviour
     {
         if (MainCamera.GetComponent<MenuManager>().isShowing == true)
         {
+            //TODO desactiver déplacement et les action du Player en général
+
+            //TODO  Activer les actions de mise en place du player (ajouter/Supprimer/Déplacer des pokemons)
             Debug.Log("C'est activé");
         }
         else
