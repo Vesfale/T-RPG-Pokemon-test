@@ -343,28 +343,27 @@ public class MapHandler
 		int Size = 3;
 
 		foreach(CardinalPoint Exit in this.ListExit){
-			Debug.Log("Je Passe");
 			switch (Exit)
 			{
 				case CardinalPoint.North:
-					RowExit = MapHeight-1;
+					RowExit = MapHeight;
 					ColumnExit = rand.Next(1,MapWidth-1-Size);
-					SetExit(ColumnExit, RowExit, Size, 0);
+					SetExit(ColumnExit, RowExit-1, ColumnExit, RowExit-Size, Size, 0);
 					break;
 				case CardinalPoint.East:
 					RowExit = rand.Next(1,MapHeight-1-Size);
-					ColumnExit = MapWidth-2;
-					SetExit(ColumnExit, RowExit, 0, Size);
+					ColumnExit = MapWidth;
+					SetExit(ColumnExit-1, RowExit, ColumnExit-Size, RowExit, 0, Size);
 					break;
 				case CardinalPoint.South:
 					RowExit = 0;
 					ColumnExit = rand.Next(1,MapWidth-1-Size);
-					SetExit(ColumnExit, RowExit, Size, 0);
+					SetExit(ColumnExit, RowExit, ColumnExit, RowExit, Size, 0);
 					break;
 				case CardinalPoint.West:
 					RowExit = rand.Next(1,MapHeight-1-Size);
 					ColumnExit = 0;
-					SetExit(ColumnExit, RowExit, 0, Size);
+					SetExit(ColumnExit, RowExit, ColumnExit, RowExit, 0, Size);
 					break;
 				default: 
 					break;
@@ -372,19 +371,24 @@ public class MapHandler
 		}
 	}
 
-	private void SetExit(int ColumnExit, int RowExit, int SizeColumn, int SizeRow)
+	private void SetExit(int ColumnExit, int RowExit, int Column, int Row, int SizeColumn, int SizeRow)
 	{
-		Debug.Log("ColumnExit = "+ColumnExit+ " <=> RowExit = "+RowExit);
-		for(int SizeExit = 0; SizeExit < SizeColumn; SizeExit++)
-		{
-			if (ColumnExit+SizeExit < MapWidth-1)
-				Map[ColumnExit+SizeExit,RowExit].Type = TypeTile.Exit;
+		for(int SizeAhead = 0; SizeAhead < SizeColumn; SizeAhead++) {
+			for(int SizeExit = 0; SizeExit < SizeColumn; SizeExit++){
+				if (Column+SizeExit < MapWidth && RowExit == Row+SizeAhead && Row+SizeAhead < MapHeight)
+					Map[Column+SizeExit,Row+SizeAhead].Type = TypeTile.Exit;
+				else if (Column+SizeExit < MapWidth && Row+SizeAhead < MapHeight)
+					Map[Column+SizeExit,Row+SizeAhead].Type = TypeTile.Ground;
+			}
 		}
 
-		for(int SizeExit = 0; SizeExit < SizeRow; SizeExit++)
-		{
-			if (RowExit+SizeExit < MapHeight-1)
-				Map[ColumnExit,RowExit+SizeExit].Type = TypeTile.Exit;
+		for(int SizeAhead = 0; SizeAhead < SizeRow; SizeAhead++) {
+			for(int SizeExit = 0; SizeExit < SizeRow; SizeExit++){
+				if (Row+SizeExit < MapHeight && ColumnExit == Column+SizeAhead && Column+SizeAhead < MapWidth)
+					Map[Column+SizeAhead,Row+SizeExit].Type = TypeTile.Exit;
+				else if (Row+SizeExit < MapHeight && ColumnExit+SizeAhead < MapWidth)
+					Map[Column+SizeAhead,Row+SizeExit].Type = TypeTile.Ground;
+			}
 		}
 	}
 

@@ -29,6 +29,8 @@ public class MainTestMap : MonoBehaviour
         List<CardinalPoint> ListExit = new List<CardinalPoint>
         {
             CardinalPoint.North,
+            CardinalPoint.East,
+            CardinalPoint.South,
             CardinalPoint.West
         };
 
